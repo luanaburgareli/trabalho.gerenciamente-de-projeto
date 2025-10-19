@@ -1,0 +1,62 @@
+[
+  {
+    "id": "u_001",
+    "nome": "Ariadne",
+    "email": "ariadne@ifsp.edu.br",
+    "perfil": "admin"
+  },
+  {
+    "id": "u_002",
+    "nome": "Bruno",
+    "email": "bruno@ifsp.edu.br",
+    "perfil": "editor"
+  },
+  {
+    "id": "u_003",
+    "nome": "Camila",
+    "email": "camila@ifsp.edu.br",
+    "perfil": "usuario"
+  },
+  {
+    "id": "u_004",
+    "nome": "Diego",
+    "email": "diego@ifsp.edu.br",
+    "perfil": "editor"
+  },
+  {
+    "id": "u_005",
+    "nome": "Eduarda",
+    "email": "eduarda@ifsp.edu.br",
+    "perfil": "usuario"
+  },
+  {
+    "id": "u_006",
+    "nome": "Felipe",
+    "email": "felipe@ifsp.edu.br",
+    "perfil": "admin"
+  },
+  {
+    "id": "u_007",
+    "nome": "Gabriela",
+    "email": "gabriela@ifsp.edu.br",
+    "perfil": "usuario"
+  },
+  {
+    "id": "u_008",
+    "nome": "Henrique",
+    "email": "henrique@ifsp.edu.br",
+    "perfil": "editor"
+  },
+  {
+    "id": "u_009",
+    "nome": "Isabela",
+    "email": "isabela@ifsp.edu.br",
+    "perfil": "usuario"
+  },
+  {
+    "id": "u_010",
+    "nome": "João",
+    "email": "joao@ifsp.edu.br",
+    "perfil": "admin"
+  }
+]
