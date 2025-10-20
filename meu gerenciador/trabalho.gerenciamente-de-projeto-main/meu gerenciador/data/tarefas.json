@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t_001",
+    "titulo": "Escrever seção 3",
+    "projeto_id": "p_001",
+    "responsavel_id": "u_001",
+    "status": "pendente",
+    "prazo": "2025-11-10"
+  },
+  {
+    "id": "t_002",
+    "titulo": "Revisar documentação técnica",
+    "projeto_id": "p_002",
+    "responsavel_id": "u_002",
+    "status": "andamento",
+    "prazo": "2025-10-25"
+  },
+  {
+    "id": "t_003",
+    "titulo": "Criar layout da interface",
+    "projeto_id": "p_003",
+    "responsavel_id": "u_003",
+    "status": "pendente",
+    "prazo": "2025-12-05"
+  }
+]

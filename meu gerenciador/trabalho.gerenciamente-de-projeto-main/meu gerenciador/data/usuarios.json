@@ -1,0 +1,20 @@
+[
+  {
+    "id": "u_001",
+    "nome": "Ariadne",
+    "email": "ariadne@ifsp.edu.br",
+    "perfil": "admin"
+  },
+  {
+    "id": "u_002",
+    "nome": "Bruno",
+    "email": "bruno@ifsp.edu.br",
+    "perfil": "editor"
+  },
+  {
+    "id": "u_003",
+    "nome": "Camila",
+    "email": "camila@ifsp.edu.br",
+    "perfil": "usuario"
+  }
+]

@@ -1,0 +1,1 @@
+Resumo_por_projeto = ""

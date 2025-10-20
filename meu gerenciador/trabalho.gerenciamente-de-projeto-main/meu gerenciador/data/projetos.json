@@ -1,0 +1,23 @@
+[
+  {
+    "id": "p_001",
+    "nome": "RosenPy Docs",
+    "descricao": "Documentação técnica e exemplos para a biblioteca RosenPy.",
+    "inicio": "2025-10-01",
+    "fim": "2025-12-05"
+  },
+  {
+    "id": "p_002",
+    "nome": "EcoTrack",
+    "descricao": "Sistema de monitoramento ambiental para controle de emissões de CO₂.",
+    "inicio": "2025-07-15",
+    "fim": "2025-11-30"
+  },
+  {
+    "id": "p_003",
+    "nome": "AgroLink",
+    "descricao": "Plataforma de integração entre produtores rurais e distribuidores.",
+    "inicio": "2025-03-10",
+    "fim": "2025-08-25"
+  }
+]
