@@ -163,17 +163,17 @@ def menu_tarefas():
         elif escolha == '3':
             projeto_id = str(input("ID do Projeto: "))
             encontrados = listar_tarefas_por_projeto(projeto_id)
-            display_entity_lista(encontrados, f"Tarefas do Projeto {projeto_id}")
+            display_entity_lista(encontrados, "Tarefas")
 
         elif escolha == '4':
             responsavel_id = str(input("ID do Responsável: "))
             encontrados = listar_tarefas_por_responsavel(responsavel_id)
-            display_entity_lista(encontrados, f"Tarefas do Responsável {responsavel_id}")
+            display_entity_lista(encontrados, "Tarefas")
 
         elif escolha == '5':
             status = str(input("Status (pendente/em andamento/concluida): "))
             encontrados = listar_tarefas_por_status(status)
-            display_entity_lista(encontrados, f"Tarefas com Status '{status}'")
+            display_entity_lista(encontrados, "Tarefas")
 
         elif escolha == '6':
             tarefa_id = str(input("ID da tarefa para atualizar: "))
@@ -242,7 +242,6 @@ def main():
         '2': 'Gerenciar Projetos',
         '3': 'Gerenciar Tarefas',
         '4': 'Relatórios',
-        '0': 'Sair'
     }
 
     print("--- Sistema de Gerenciamento de Projetos ---")
