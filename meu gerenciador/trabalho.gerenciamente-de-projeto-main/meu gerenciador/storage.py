@@ -21,7 +21,7 @@ def salvar_dados(entity_name, data):
     caminho = caminho_arquivo(entity_name)
     try:
         with open(caminho, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4, esfure_ascii=False)
+            json.dump(data, f, indent=4, ensure_ascii=False)
     except IOError as e:
         print(f"Erro ao salvar dados para {entity_name}:{e}")
         
