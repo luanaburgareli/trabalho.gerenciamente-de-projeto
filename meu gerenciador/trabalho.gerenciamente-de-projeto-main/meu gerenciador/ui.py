@@ -50,3 +50,34 @@ def display_entity_lista(dados, titulo):
                   d.get("responsavel_id", "N/A"), "|", d.get("status", "N/A"), "|", d.get("prazo", "N/A"))
     else:
         print("Tipo de lista não suportado.")
+
+def display_relatorio(dados, titulo):
+    if dados is None:
+        print("Erro ao gerar relatório.")
+        return
+
+    print()
+    print("=== Relatório:", titulo, "===")
+
+    if titulo == "Resumo por Projeto":
+        print("Projeto:", dados["projeto"])
+        print("Total de tarefas:", dados["total_tarefas"])
+        print("Status:")
+        for status, qtd in dados["status"].items():
+            print("  -", status, ":", qtd)
+        print("Percentual Concluídas:", dados["percentual_concluidas"], "%")
+
+    elif titulo == "Tarefas em Atraso":
+        print("Total de tarefas em atraso:", dados["total_atrasadas"])
+        if dados["total_atrasadas"] > 0:
+            print()
+            print("ID | Título | Projeto | Responsável | Prazo | Status")
+            print("-----------------------------------------")
+            for d in dados["detalhes"]:
+                titulo = d["titulo"]
+                projeto = d["projeto"]
+                resp = d["responsavel"]
+                if len(titulo) > 20: titulo = titulo[:17] + "..."
+                if len(projeto) > 20: projeto = projeto[:17] + "..."
+                if len(resp) > 20: resp = resp[:17] + "..."
+                print(d["id"], "|", titulo, "|", projeto, "|", resp, "|", d["prazo"], "|", d["status"])
