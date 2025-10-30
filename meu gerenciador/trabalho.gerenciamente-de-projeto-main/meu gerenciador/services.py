@@ -15,8 +15,13 @@ def get_id_entity(entity_name, entity_id):
             return entity
     return None
 
-def cadastrar_usuario(nome, email):
-    return criar_usuario(nome, email)
+def cadastrar_usuario(nome, email, perfil):
+    dados = {
+        'nome': nome,
+        'email': email,
+        'perfil': perfil
+    }
+    return criar_usuario(dados)
 
 def listar_usuarios():
     return carregar_dados('usuarios')
@@ -32,7 +37,7 @@ def buscar_usuario(termo):
         return resultados
     return []
 
-def atualizar_usuario(user_id, nome=None, email=None):
+def atualizar_usuario(user_id, nome=None, email=None, perfil=None):
     usuarios = carregar_dados('usuarios')
     indice = get_indice_entity('usuarios', user_id)
     if indice == -1:
@@ -42,6 +47,7 @@ def atualizar_usuario(user_id, nome=None, email=None):
     
     if nome is not None: user['nome'] = nome
     if email is not None: user['email'] = email
+    if perfil is not None: user['perfil'] = perfil
     
     if validar_usuario(user):
         usuarios[indice] = user
@@ -65,7 +71,13 @@ def remover_usuario(user_id):
 
 
 def cadastrar_projeto(nome, descricao, data_inicio, data_fim=None):
-    return criar_projeto(nome, descricao, data_inicio, data_fim)
+    dados = {
+        'nome': nome,
+        'descricao': descricao,
+        'data_inicio': data_inicio,
+        'data_fim': data_fim
+    }
+    return criar_projeto(dados)
 
 def listar_projetos():
     return carregar_dados('projetos')
@@ -112,7 +124,14 @@ def remover_projeto(projeto_id):
 
 
 def cadastrar_tarefa(titulo, projeto_id, responsavel_id, prazo, status='pendente'):
-    return criar_tarefa(titulo, projeto_id, responsavel_id, prazo, status)
+    dados = {
+        'titulo': titulo,
+        'projeto_id': projeto_id,
+        'responsavel_id': responsavel_id,
+        'prazo': prazo,
+        'status': status
+    }
+    return criar_tarefa(dados)
 
 def listar_tarefas():
     return carregar_dados('tarefas')
@@ -142,19 +161,19 @@ def atualizar_tarefa(tarefa_id, titulo=None, responsavel_id=None, prazo=None, st
     if prazo is not None: tarefa['prazo'] = prazo
     if status is not None: tarefa['status'] = status
 
-    is_valid, message = validar_tarefa(tarefa, is_new=False)
+    is_valid = validar_tarefa(tarefa)
     if not is_valid:
-        return False, message
+        return False
 
     tarefas[index] = tarefa
     salvar_dados('tarefas', tarefas)
     return True
 
 def completar_tarefa(tarefa_id):
-    return atualizar_tarefa(tarefa_id, status='concluída')
+    return atualizar_tarefa(tarefa_id, status='concluida')
 
 def reabrir_tarefa(tarefa_id):
-    return atualizar_tarefa(tarefa_id, status='andamento')
+    return atualizar_tarefa(tarefa_id, status='em andamento')
 
 def remover_tarefa(tarefa_id):
     tarefas = listar_tarefas()
