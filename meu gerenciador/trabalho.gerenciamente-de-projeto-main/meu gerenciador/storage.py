@@ -14,7 +14,7 @@ def carregar_dados(entity_name):
             if not conteudo:
                 return []
             return json.loads(conteudo)
-    except (FileNotFoundError or json.JSONDecodeError):
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
     
 def salvar_dados(entity_name, data):
