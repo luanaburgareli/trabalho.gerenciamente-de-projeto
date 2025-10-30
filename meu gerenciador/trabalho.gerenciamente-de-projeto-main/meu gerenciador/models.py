@@ -81,7 +81,7 @@ def criar_projeto(dados_projeto):
 
 def criar_tarefa(dados_tarefa):
     if not validar_tarefa(dados_tarefa):
-        return None
+        return "erro pra validar"
     
     dados_tarefa['id'] = gerar_id('t')
     tarefas = carregar_dados('tarefas')
