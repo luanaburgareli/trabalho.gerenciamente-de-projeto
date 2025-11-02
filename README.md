@@ -82,3 +82,4 @@ meugerenciador/
 
 
 Burgareli :)
+Nicole Cerqueira Nakahara
