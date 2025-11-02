@@ -33,7 +33,7 @@ meugerenciador/
 
 ## Como foi feito:
 
-### Fase 1: Definindo o dictório
+### Fase 1: Definindo o programa
 
 - **Análise dos Requisitos:** Identificando as entidades e atributos, e separando dictório para json.
 
@@ -41,11 +41,11 @@ meugerenciador/
 ### Fase 2: Fazendo os códigos (em ordem)
 
 1.  **`storage.py`:**
-    *   Função pra carregar a lista de dicionarios do arquivo json da entidade.
+    *   Função pra carregar a lista de dicionários do arquivo json da entidade.
     *   Função pra salvar uma lista de dicionários no arquivo JSON.
 
 2.  **`utils.py`:**
-    *   Função pra gerar um ID único e aleatório para cada novo cadrsstro.
+    *   Função pra gerar um ID único e aleatório para cada novo cadrastro.
     *   Funções para validar o formato de e-mails e datas.
 
 3.  **`models.py`:**
@@ -81,5 +81,5 @@ meugerenciador/
 2.  **Criação do `README.md`**: Escrever esse documento falando do projeto, e como usar.
 
 
-Burgareli :)
+Luana Burgareli  e
 Nicole Cerqueira Nakahara
