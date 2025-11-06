@@ -81,5 +81,5 @@ meugerenciador/
 2.  **Criação do `README.md`**: Escrever esse documento falando do projeto, e como usar.
 
 
-Luana Burgareli  e
-Nicole Cerqueira Nakahara
+Luana Burgareli ,
+Nicole Cerqueira Nakahara, Gabriel ferreira
