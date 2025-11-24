@@ -1,3 +1,11 @@
+#===========================================================================================#
+# MAIN
+# DESCRICAO: progrmama principal
+# AUTORES: Gabriel, Luana, Nicole
+# DATA: 27/11/25
+#===========================================================================================#
+
+
 import sys
 from storage import iniciar_dados
 from services import *
