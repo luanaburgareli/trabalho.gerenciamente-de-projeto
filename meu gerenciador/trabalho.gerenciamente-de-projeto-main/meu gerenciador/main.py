@@ -247,7 +247,7 @@ def main():
     print("--- Sistema de Gerenciamento de Projetos ---")
     
     while True:
-        os.system('cls' if os.name == 'nt' else 'clear') #(vai q o bgl n é o windonws né)
+        os.system('cls' if os.name == 'nt' else 'clear') #(caso o sistema operacional não seje windows)
         choice = display_menu("Menu Principal", main_menu_options)
         
         if choice == '1':
