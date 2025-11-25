@@ -1,3 +1,4 @@
+# services.py
 from storage import carregar_dados, salvar_dados
 from models import validar_usuario, validar_projeto, validar_tarefa, criar_usuario, criar_projeto, criar_tarefa
 
@@ -33,22 +34,17 @@ def buscar_usuario(termo):
     for usuario in usuarios:
         if termo in usuario.get('nome', '').lower() or termo in usuario.get('email', '').lower():
             resultados.append(usuario)
-    if resultados:
-        return resultados
-    return []
+    return resultados
 
 def atualizar_usuario(user_id, nome=None, email=None, perfil=None):
     usuarios = carregar_dados('usuarios')
     indice = get_indice_entity('usuarios', user_id)
     if indice == -1:
         return False
-    
     user = usuarios[indice]
-    
     if nome is not None: user['nome'] = nome
     if email is not None: user['email'] = email
     if perfil is not None: user['perfil'] = perfil
-    
     if validar_usuario(user):
         usuarios[indice] = user
         salvar_dados('usuarios', usuarios)
@@ -60,15 +56,12 @@ def remover_usuario(user_id):
     indice = get_indice_entity('usuarios', user_id)
     if indice == -1:
         return False
-    
     tarefas = listar_tarefas()
     if any(tarefa.get('responsavel_id') == user_id for tarefa in tarefas):
         return False
-    
     del usuarios[indice]
     salvar_dados('usuarios', usuarios)
     return True
-
 
 def cadastrar_projeto(nome, descricao, data_inicio, data_fim=None):
     dados = {
@@ -89,23 +82,18 @@ def buscar_projeto(termo):
     for projeto in projetos:
         if termo in projeto.get('nome', '').lower():
             resultados.append(projeto)
-    if resultados:
-        return resultados
-    return []
-    
+    return resultados
+
 def atualizar_projeto(projeto_id, nome=None, descricao=None, data_inicio=None, data_fim=None):
     projetos = carregar_dados('projetos')
     indice = get_indice_entity('projetos', projeto_id)
     if indice == -1:
         return False
-    
     projeto = projetos[indice]
-    
     if nome is not None: projeto['nome'] = nome
     if descricao is not None: projeto['descricao'] = descricao
     if data_inicio is not None: projeto['data_inicio'] = data_inicio
     if data_fim is not None: projeto['data_fim'] = data_fim
-
     if validar_projeto(projeto):
         projetos[indice] = projeto
         salvar_dados('projetos', projetos)
@@ -117,11 +105,9 @@ def remover_projeto(projeto_id):
     indice = get_indice_entity('projetos', projeto_id)
     if indice == -1:
         return False
-
     del projetos[indice]
     salvar_dados('projetos', projetos)
     return True
-
 
 def cadastrar_tarefa(titulo, projeto_id, responsavel_id, prazo, status='pendente'):
     dados = {
@@ -148,23 +134,20 @@ def listar_tarefas_por_status(status):
     tarefas = listar_tarefas()
     return [tarefa for tarefa in tarefas if tarefa.get('status') == status]
 
-def atualizar_tarefa(tarefa_id, titulo=None, responsavel_id=None, prazo=None, status=None):
+def atualizar_tarefa(tarefa_id, titulo=None, projeto_id=None, responsavel_id=None, prazo=None, status=None):
     tarefas = listar_tarefas()
     index = get_indice_entity('tarefas', tarefa_id)
     if index == -1:
         return False
-
     tarefa = tarefas[index].copy()
-    
     if titulo is not None: tarefa['titulo'] = titulo
+    if projeto_id is not None: tarefa['projeto_id'] = projeto_id
     if responsavel_id is not None: tarefa['responsavel_id'] = responsavel_id
     if prazo is not None: tarefa['prazo'] = prazo
     if status is not None: tarefa['status'] = status
-
     is_valid = validar_tarefa(tarefa)
     if not is_valid:
         return False
-
     tarefas[index] = tarefa
     salvar_dados('tarefas', tarefas)
     return True
@@ -180,7 +163,6 @@ def remover_tarefa(tarefa_id):
     index = get_indice_entity('tarefas', tarefa_id)
     if index == -1:
         return False
-
     del tarefas[index]
     salvar_dados('tarefas', tarefas)
     return True
