@@ -79,6 +79,8 @@ meugerenciador/
 
 1.  **Testes Manuais:** Execução do `main.py` para simular o fluxo de uso: cadastrar usuários, projetos e tarefas; atualizar e remover registros; e gerar todos os relatórios para garantir que os resultados são os esperados diversas vezes durante os processos.
 2.  **Criação do `README.md`**: Escrever esse documento falando do projeto, e como usar.
+3.  
+nicole Luana e Gabriel
 
 
 Luana Burgareli ,
