@@ -44,7 +44,7 @@ def menu_usuarios():
         elif escolha == '3':
             termo = input("Digite o nome ou e-mail: ").strip()
             if not termo:
-                print("Digite algo para buscar.")
+                print("Digite nome ou e-mail para buscar.")
                 continue
             encontrados = buscar_usuario(termo)
             display_entity_lista(encontrados, "Usuários Encontrados")
