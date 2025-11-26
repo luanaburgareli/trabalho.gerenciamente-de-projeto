@@ -1,20 +1,32 @@
 [
   {
     "id": "u_001",
-    "nome": "Ariadne",
-    "email": "ariadne@ifsp.edu.br",
+    "nome": "hhj",
+    "email": "luj@gmail.com",
     "perfil": "admin"
   },
   {
     "id": "u_002",
-    "nome": "Bruno",
-    "email": "bruno@ifsp.edu.br",
-    "perfil": "editor"
+    "nome": "ki",
+    "email": "lu@gmail.com",
+    "perfil": "oi"
   },
   {
     "id": "u_003",
     "nome": "Camila",
     "email": "camila@ifsp.edu.br",
     "perfil": "usuario"
+  },
+  {
+    "nome": "jf",
+    "email": "fuhrhf@gmail.com",
+    "perfil": "admin",
+    "id": "u_004"
+  },
+  {
+    "nome": "jhjbhb",
+    "email": "lua@gmail.com",
+    "perfil": "admin",
+    "id": "u_005"
   }
 ]

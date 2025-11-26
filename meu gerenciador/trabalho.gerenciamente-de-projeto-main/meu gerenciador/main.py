@@ -60,6 +60,8 @@ def menu_usuarios():
             if not validar_email(novo_email):
                 print("E-mail inválido.")
                 continue
+             if perfil not in ['usuario', 'admin']:
+                print("Perfil inválido.")
             success = atualizar_usuario(user_id, novo_nome, novo_email, novo_perfil)
             print("Usuário atualizado com sucesso." if success else "Erro ao atualizar usuário.")
         elif escolha == '5':
