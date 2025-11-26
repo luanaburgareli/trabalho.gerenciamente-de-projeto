@@ -60,7 +60,7 @@ def menu_usuarios():
             if not validar_email(novo_email):
                 print("E-mail inválido.")
                 continue
-            if novo_perfil not in ['usuario', 'admin']:
+            if novo_perfil not in ['usuario', 'admin', 'usuário']:
                 print("Perfil inválido.")
                 continue
             success = atualizar_usuario(user_id, novo_nome, novo_email, novo_perfil)
@@ -145,7 +145,7 @@ def menu_tarefas():
             projeto_id = input("ID do Projeto: ").strip()
             responsavel_id = input("ID do Responsável: ").strip()
             prazo = input("Prazo (YYYY-MM-DD): ").strip()
-            status = input("Status (pendente/em andamento/concluida) [pendente]: ").strip() or "pendente"
+            status = input("Status (pendente/andamento/concluida): ").strip() 
             result = cadastrar_tarefa(titulo, projeto_id, responsavel_id, prazo, status)
             print("Tarefa cadastrada com sucesso." if result else "Erro ao cadastrar tarefa.")
         elif escolha == '2':
