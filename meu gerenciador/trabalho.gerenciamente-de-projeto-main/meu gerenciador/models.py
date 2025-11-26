@@ -45,7 +45,7 @@ def validar_tarefa(dados_tarefa):
         return False
     if not validar_data(prazo):
         return False
-    if status not in ['pendente', 'em andamento', 'concluida']:
+    if status not in ['pendente', 'andamento', 'concluida']:
         return False
     return True
 
@@ -75,3 +75,4 @@ def criar_tarefa(dados_tarefa):
     tarefas.append(dados_tarefa)
     salvar_dados('tarefas', tarefas)
     return dados_tarefa
+
