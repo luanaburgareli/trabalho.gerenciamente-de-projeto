@@ -9,11 +9,11 @@ def get_indice_entity(entity_name, entity_id):
             return i
     return -1
 
-def get_id_entity(entity_name, entity_id):
+def get_id_entity(entity_name, entity_id):       
     data = carregar_dados(entity_name)
     for entity in data:
         if entity.get('id') == entity_id:
-            return entity
+            return entity                 #retorna de acordo com o ID
     return None
 
 def cadastrar_usuario(nome, email, perfil):
@@ -29,7 +29,7 @@ def listar_usuarios():
 
 def buscar_usuario(termo):
     usuarios = carregar_dados('usuarios')
-    termo = termo.lower()
+    termo = termo.lower()                       #converte tudo para minuscula
     resultados = []
     for usuario in usuarios:
         if termo in usuario.get('nome', '').lower() or termo in usuario.get('email', '').lower():
@@ -39,7 +39,7 @@ def buscar_usuario(termo):
 def atualizar_usuario(user_id, nome=None, email=None, perfil=None):
     usuarios = carregar_dados('usuarios')
     indice = get_indice_entity('usuarios', user_id)
-    if indice == -1:
+    if indice == -1:       #se não encontrou o ID na lista de usuários
         return False
     user = usuarios[indice]
     if nome is not None: user['nome'] = nome
@@ -56,7 +56,7 @@ def remover_usuario(user_id):
     indice = get_indice_entity('usuarios', user_id)
     if indice == -1:
         return False
-    tarefas = listar_tarefas()
+    tarefas = listar_tarefas()       #só remover se o usuário não responsável por tarefas
     if any(tarefa.get('responsavel_id') == user_id for tarefa in tarefas):
         return False
     del usuarios[indice]
@@ -166,3 +166,4 @@ def remover_tarefa(tarefa_id):
     del tarefas[index]
     salvar_dados('tarefas', tarefas)
     return True
+
