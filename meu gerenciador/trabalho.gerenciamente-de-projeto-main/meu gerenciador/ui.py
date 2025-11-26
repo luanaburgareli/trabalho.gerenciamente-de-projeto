@@ -5,7 +5,10 @@ def display_menu(title, options: dict) -> str:
         print(f"[{key}] {val}")
     print("[0] Voltar / Sair")
     escolha = input("Escolha: ").strip()
-    return escolha
+    if escolha in options or escolha == '0':
+            return escolha
+    else:
+        print("Opção Inválida. Tente novamente.")
 
 def display_entity_lista(lista, titulo="Lista"):
     print(f"\n--- {titulo} ---")
@@ -27,3 +30,4 @@ def display_relatorio(relatorio, titulo="Relatório"):
             print(f"{k}: {v}")
     else:
         print(relatorio)
+
