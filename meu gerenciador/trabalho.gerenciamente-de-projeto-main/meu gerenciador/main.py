@@ -67,8 +67,11 @@ def menu_usuarios():
             print("Usuário atualizado com sucesso." if success else "Erro ao atualizar usuário.")
         elif escolha == '5':
             user_id = input("ID do usuário para remover: ").strip()
-            success = remover_usuario(user_id)
-            print("Usuário removido." if success else "Erro ao remover usuário.")
+            user = get_id_entity('usuarios', user_id)
+            if not user:
+                print("Usuário não encontrado.")
+                continue
+            print("Usuário removido." if success else "Erro ao remover usuário - usuário associado com tarefa.")
 
 def menu_projetos():
     menu_options = {
