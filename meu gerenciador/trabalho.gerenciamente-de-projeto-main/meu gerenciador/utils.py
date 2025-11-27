@@ -2,7 +2,7 @@
 import datetime
 import re
 import uuid
- carregar_dados()
+import storage from carregar dados
 
 def gerar_id(prefix: str) -> str:
     mapping = {'u': 'usuarios', 'p': 'projetos', 't': 'tarefas'}
