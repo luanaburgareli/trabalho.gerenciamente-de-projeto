@@ -9,7 +9,7 @@ ENTITY_FILES = {
     'tarefas': 'tarefas.json'
 }
 
-def _ensure_data_dir():
+def _ensure_data_dir():            #cria diretório de caminho para o arquivo
     os.makedirs(DATA_DIR, exist_ok=True)
     for name, fname in ENTITY_FILES.items():
         path = os.path.join(DATA_DIR, fname)
@@ -30,8 +30,8 @@ def _path(entity_name):
 def carregar_dados(entity_name):
     _ensure_data_dir()
     path = _path(entity_name)
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
+    try:                            #tratamento de erro
+        with open(path, 'r', encoding='utf-8') as f:  #abre arquivo para leitura(r), aceita acentuação e atribui para a var f
             return json.load(f)
     except Exception:
         return []
@@ -39,5 +39,5 @@ def carregar_dados(entity_name):
 def salvar_dados(entity_name, data):
     _ensure_data_dir()
     path = _path(entity_name)
-    with open(path, 'w', encoding='utf-8') as f:
+    with open(path, 'w', encoding='utf-8') as f:   #abre arquivo para escrita(w) com with open, aceita acentuação e atribui para a var f
         json.dump(data, f, ensure_ascii=False, indent=2)
