@@ -6,9 +6,9 @@ from utils import gerar_id, validar_data, validar_email, diferenca_datas
 _ensure_data_dir()
 
 def validar_usuario(dados_usuario):
-    if not dados_usuario.get('nome'):
+    if not dados_usuario.get('nome'):      #acesso seguro com .get
         return False
-    email = dados_usuario.get('email')
+    email = dados_usuario.get('email')       
     if not email or not validar_email(email):
         return False
     usuarios = carregar_dados('usuarios')
@@ -75,4 +75,5 @@ def criar_tarefa(dados_tarefa):
     tarefas.append(dados_tarefa)
     salvar_dados('tarefas', tarefas)
     return dados_tarefa
+
 
