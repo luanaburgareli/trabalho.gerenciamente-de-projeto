@@ -19,13 +19,13 @@ def validar_email(email: str) -> bool:
     email = email.strip()
     if len(email) > 80:
         return False
-    regex = r'^[^@\s]+@[^@\s]+\.[^@\s]+$'
+    regex = r'^[^@\s]+@[^@\s]+\.[^@\s]+$'    #se segue padrão de linguagem de eamil
     return re.match(regex, email) is not None
 
 def validar_data(data_str: str) -> bool:
     if not data_str:
         return False
-    try:
+    try:                                    # bloco de tratamento de erro
         datetime.datetime.strptime(data_str, "%Y-%m-%d")
         return True
     except ValueError:
